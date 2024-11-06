@@ -1,5 +1,7 @@
+import { HomeMain } from './components/HomeMain';
+
 function App() {
-  return <div>chao</div>;
+    return <HomeMain />;
 }
 
 export default App;
