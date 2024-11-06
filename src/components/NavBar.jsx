@@ -12,7 +12,7 @@ export const NavBar = () => {
     };
 
     return (
-        <Navbar bg="dark" expand="md" className="customNavbar">
+        <Navbar bg="dark" expand="md">
             <Container className="d-flex justify-content-between align-items-center">
                 {/* Logo */}
                 <div>
@@ -22,7 +22,7 @@ export const NavBar = () => {
                 </div>
 
                 {/* Toggle + Links // menu desplegable */}
-                <div className="align-items-center toggleLinksContainer">
+                <div className="align-items-center">
                     <Navbar.Toggle aria-controls="basic-navbar-nav" onClick={toggleMenu} className="customToggler">
                         <FontAwesomeIcon icon={faBars} />
                     </Navbar.Toggle>
