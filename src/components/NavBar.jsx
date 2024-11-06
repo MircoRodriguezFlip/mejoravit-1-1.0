@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { NavLink } from 'react-router-dom';
 import { Navbar, Container, Nav } from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars } from '@fortawesome/free-solid-svg-icons';
@@ -17,11 +16,11 @@ export const NavBar = () => {
                 {/* Logo */}
                 <div>
                     <Navbar.Brand href="#home" className="logoNav">
-                        Mejoravit
+                        MejoraVit
                     </Navbar.Brand>
                 </div>
 
-                {/* Toggle + Links // menu desplegable */}
+                {/* Toggle + Links */}
                 <div className="align-items-center toggleLinksContainer">
                     <Navbar.Toggle aria-controls="basic-navbar-nav" onClick={toggleMenu} className="customToggler">
                         <FontAwesomeIcon icon={faBars} />
@@ -29,15 +28,10 @@ export const NavBar = () => {
 
                     <Navbar.Collapse id="basic-navbar-nav" className={`collapse navbar-collapse ${isOpen ? 'show' : ''}`}>
                         <Nav className="ms-auto opcionesNav">
-                            <Nav.Link as={NavLink} to="/">
-                                Home
-                            </Nav.Link>
-                            <Nav.Link as={NavLink} to="/category/opcion1">
-                                Opcion 1
-                            </Nav.Link>
-                            <Nav.Link as={NavLink} to="/category/opcion2">
-                                Opcion 2
-                            </Nav.Link>
+                            <Nav.Link href="#home">Home</Nav.Link>
+                            <Nav.Link href="#Precalificar">Precalificar</Nav.Link>
+                            <Nav.Link href="#InformacionDelCrédito">Informacion del Crédito</Nav.Link>
+                            <Nav.Link href="#InformaciónAdicional">Información Adicional</Nav.Link>
                         </Nav>
                     </Navbar.Collapse>
                 </div>

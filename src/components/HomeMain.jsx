@@ -1,9 +1,9 @@
 import Container from 'react-bootstrap/Container';
 
-export const HomeMain = () => {
+export const HomeMain = (props) => {
     return (
         <Container>
-            <h1>HOLA</h1>
+            <p className="bienvenido">{props.greeting}</p>
         </Container>
     );
 };

@@ -1,7 +1,13 @@
 import { HomeMain } from './components/HomeMain';
+import { NavBar } from './components/NavBar';
 
 function App() {
-    return <HomeMain />;
+    return (
+        <>
+            <NavBar />
+            <HomeMain greeting="Bienvenido" />
+        </>
+    );
 }
 
 export default App;

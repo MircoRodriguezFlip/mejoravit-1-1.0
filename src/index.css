@@ -1,1 +1,203 @@
+/* -------------------------------------- NAVBAR */
 
+/* .customNavbar {
+    padding-right: 10px;
+    padding-left: 10px;
+}
+
+.logoNav {
+    color: white;
+    font-size: 24px;
+}
+
+.logoNav:hover {
+    color: white;
+}
+
+.toggleLinksContainer {
+    display: flex;
+    flex-grow: 1;
+    justify-content: flex-end;
+}
+
+.customToggler {
+    border: none;
+}
+
+.customToggler .fa-bars {
+    color: white;
+}
+
+.collapse.navbar-collapse {
+    z-index: 1000;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: #343a40;
+}
+
+.opcionesNav {
+    padding-left: 10px;
+}
+
+.navbar-nav .nav-link {
+    color: white;
+}
+
+.navbar-nav .nav-link:hover {
+    color: red;
+}
+
+.navbar-nav .nav-link.active {
+    color: white;
+}
+
+.cardWidgetContainer {
+    display: flex;
+    align-items: center;
+    margin-left: 10px;
+} */
+
+/* -------------------------------------- CARD WIDGET */
+
+/* .link-no-underline {
+    text-decoration: none;
+}
+
+.iconoCarro {
+    font-size: 16;
+    color: white;
+    text-decoration: none;
+    margin: 0 2px;
+}
+
+.iconoCarro:hover {
+    color: red;
+}
+
+.cart-quantity {
+    color: white;
+    padding-left: 5px;
+} */
+
+/* -------------------------------------- ITEM DETAIL */
+
+/* .text-danger {
+    cursor: pointer;
+    display: inline;
+} */
+
+/* -------------------------------------- BRIEF */
+
+/* .list-products-cart {
+    padding-left: 100px;
+} */
+
+/* -------------------------------------- MEDIA QUERY */
+
+/* @media (min-width: 576px) {
+    .collapse.navbar-collapse {
+        top: auto;
+        left: auto;
+        background-color: transparent;
+    }
+} */
+
+/* ---------------------------------------------------------------------------------------------------------- */
+
+/* -------------------------------------- NAVBAR */
+
+.customNavbar {
+    padding-right: 10px;
+}
+
+.logoNav {
+    color: white;
+    font-size: 24px;
+}
+
+.logoNav:hover {
+    color: white;
+}
+
+.toggleLinksContainer {
+    display: flex;
+    flex-grow: 1;
+    justify-content: flex-end;
+}
+
+.customToggler {
+    border: none;
+}
+
+.customToggler .fa-bars {
+    color: white;
+}
+
+.collapse.navbar-collapse {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: #343a40;
+}
+
+.opcionesNav {
+    padding-left: 10px;
+}
+
+.navbar-nav .nav-link {
+    color: white;
+}
+
+.navbar-nav .nav-link:hover {
+    color: red;
+}
+
+.navbar-nav .nav-link.active {
+    color: white;
+}
+
+.cardWidgetContainer {
+    display: flex;
+    align-items: center;
+    margin-left: 10px;
+}
+
+/* -------------------------------------- CARD WIDGET */
+
+.iconoCarro {
+    font-size: 16;
+    color: white;
+    text-decoration: none;
+    margin: 0 2px;
+}
+
+.iconoCarro:hover {
+    color: red;
+}
+
+span {
+    color: white;
+    padding-left: 5px;
+}
+
+/* -------------------------------------- ITEM LIST CONTAINER */
+
+.bienvenido {
+    padding-top: 10px;
+    text-align: center;
+    font-size: 50px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* -------------------------------------- MEDIA QUERY */
+
+@media (min-width: 576px) {
+    .collapse.navbar-collapse {
+        top: auto;
+        left: auto;
+        background-color: transparent;
+    }
+}
