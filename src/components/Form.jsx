@@ -20,24 +20,17 @@ export const Form = () => {
         console.log('Datos del formulario:', formData);
 
         try {
-            // Enviar los datos a Airtable
-            const response = await fetch('https://api.airtable.com/v0/appNFf11OFvNLIlAV/tblLukkks1qlvwJuv', {
+            // Enviar los datos al backend
+            const response = await fetch('http://localhost:5000/submit', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
-                    Authorization: 'Bearer patRaZgEmgeLm0w0u.b024823cf152caf1fe8e72e3f18c5f5b0fe851aa9ed41f7d7dc909917b6e4b18',
                 },
-                body: JSON.stringify({
-                    fields: {
-                        Name: formData.nombre,
-                        Phone: formData.telefono,
-                        NSS: formData.seguroSocial,
-                    },
-                }),
+                body: JSON.stringify(formData),
             });
 
             const data = await response.json();
-            console.log('Respuesta de la API:', data);
+            console.log('Respuesta del backend:', data);
 
             if (response.ok) {
                 alert('Datos enviados correctamente');
