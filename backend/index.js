@@ -11,7 +11,8 @@ app.use(express.json());
 
 // Ruta para manejar el envío de los datos del formulario
 app.post('/submit', async (req, res) => {
-    const { nombre, telefono, seguroSocial } = req.body;
+    // Desestructuración de los campos del formulario
+    const { nombre, apellido, fechaNacimiento, telefono, email, estado, seguroSocial } = req.body;
 
     try {
         // Realiza la solicitud a Airtable desde el servidor (Backend)
@@ -19,8 +20,12 @@ app.post('/submit', async (req, res) => {
             `https://api.airtable.com/v0/${process.env.AIRTABLE_BASE_ID}/${process.env.AIRTABLE_TABLE_NAME}`,
             {
                 fields: {
-                    Name: nombre,
-                    Phone: telefono,
+                    name: nombre,
+                    last_name: apellido,
+                    birth_date: fechaNacimiento,
+                    phone: telefono,
+                    email: email,
+                    state: estado,
                     NSS: seguroSocial,
                 },
             },
