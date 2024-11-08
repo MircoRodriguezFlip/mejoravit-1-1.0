@@ -5,43 +5,68 @@ export const Form = () => {
         nombre: '',
         apellido: '',
         fechaNacimiento: '',
-        telefono: '+52', // Inicializamos con el prefijo
+        telefono: '+52',
         email: '',
-        estado: '',
+        estado: '', // Asegúrate de que el estado esté vacío por defecto
         seguroSocial: '',
     });
+
+    const estados = [
+        'Selecciona un Estado',
+        'Aguascalientes',
+        'Baja California',
+        'Baja California Sur',
+        'Campeche',
+        'Chiapas',
+        'Chihuahua',
+        'Coahuila',
+        'Colima',
+        'Durango',
+        'Guanajuato',
+        'Guerrero',
+        'Hidalgo',
+        'Jalisco',
+        'Mexico',
+        'Michoacán',
+        'Morelos',
+        'Nayarit',
+        'Nuevo León',
+        'Oaxaca',
+        'Puebla',
+        'Querétaro',
+        'Quintana Roo',
+        'San Luis Potosí',
+        'Sinaloa',
+        'Sonora',
+        'Tabasco',
+        'Tamaulipas',
+        'Tlaxcala',
+        'Veracruz',
+        'Yucatán',
+        'Zacatecas',
+    ];
 
     const handleChange = (e) => {
         const { name, value } = e.target;
 
         // Si el campo es teléfono, solo permitimos números después del prefijo +52
         if (name === 'telefono') {
-            // Comprobamos si el valor tiene solo números y si empieza con +52
             const validPhoneValue = value.replace(/[^0-9]/g, ''); // Solo permitimos números
-            if (validPhoneValue === '') return; // Si no hay números, no hacemos nada
+            if (validPhoneValue === '') return;
 
-            // Aseguramos que siempre empiece con +52
             const newValue = validPhoneValue.length > 0 ? '+52' + validPhoneValue.slice(2) : '+52';
 
             setFormData((prevData) => ({
                 ...prevData,
                 [name]: newValue,
             }));
-        } else if (name === 'seguroSocial') {
-            // Aplicamos la máscara para el NSS (XXX-XX-XXXX)
-            const cleanedValue = value.replace(/[^0-9]/g, ''); // Eliminar caracteres no numéricos
-
-            // Formateamos el valor con los guiones
-            const formattedValue =
-                cleanedValue.slice(0, 3) +
-                (cleanedValue.length > 3 ? '-' : '') +
-                cleanedValue.slice(3, 5) +
-                (cleanedValue.length > 5 ? '-' : '') +
-                cleanedValue.slice(5, 9);
-
+        }
+        // Si el campo es seguroSocial, solo permitimos números y limitamos a 10 dígitos
+        else if (name === 'seguroSocial') {
+            const validSocialSecurityValue = value.replace(/[^0-9]/g, '').slice(0, 10);
             setFormData((prevData) => ({
                 ...prevData,
-                [name]: formattedValue,
+                [name]: validSocialSecurityValue,
             }));
         } else {
             setFormData((prevData) => ({
@@ -54,7 +79,13 @@ export const Form = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
 
-        // Validación del número de teléfono: que tenga al menos un número después del +52
+        // Validación de que se ha seleccionado un estado
+        if (formData.estado === 'Selecciona un Estado') {
+            alert('Por favor selecciona un estado.');
+            return;
+        }
+
+        // Validación del número de teléfono
         if (formData.telefono.length <= 10) {
             alert('Por favor ingrese un número de teléfono válido.');
             return;
@@ -63,7 +94,6 @@ export const Form = () => {
         console.log('Datos del formulario:', formData);
 
         try {
-            // Enviar los datos al backend
             const response = await fetch('http://localhost:5000/submit', {
                 method: 'POST',
                 headers: {
@@ -86,7 +116,6 @@ export const Form = () => {
         }
     };
 
-    // Obtener la fecha actual en formato yyyy-mm-dd
     const currentDate = new Date().toISOString().split('T')[0];
 
     return (
@@ -162,7 +191,13 @@ export const Form = () => {
                 <label htmlFor="estado" className="form-label">
                     Estado donde vives:
                 </label>
-                <input type="text" className="form-control" id="estado" name="estado" value={formData.estado} onChange={handleChange} required />
+                <select className="form-control" id="estado" name="estado" value={formData.estado} onChange={handleChange} required>
+                    {estados.map((estado, index) => (
+                        <option key={index} value={estado}>
+                            {estado}
+                        </option>
+                    ))}
+                </select>
             </div>
 
             {/* NSS */}
@@ -177,6 +212,7 @@ export const Form = () => {
                     name="seguroSocial"
                     value={formData.seguroSocial}
                     onChange={handleChange}
+                    maxLength="10"
                 />
             </div>
 
