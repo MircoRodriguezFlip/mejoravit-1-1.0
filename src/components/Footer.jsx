@@ -4,7 +4,7 @@ import { faFacebook, faTiktok, faInstagram } from '@fortawesome/free-brands-svg-
 
 export const Footer = () => {
     return (
-        <footer className="text-center bg-dark text-white py-4">
+        <footer className="text-center text-white py-4 footer">
             <div className="container">
                 {/* Logo */}
                 <div className="mb-3">
@@ -27,7 +27,7 @@ export const Footer = () => {
                 </div>
 
                 {/* Copyright */}
-                <p>Todos los derechos son reservados por copyright ©</p>
+                <p>© 2023 Mejoravit | Infonavit</p>
             </div>
         </footer>
     );

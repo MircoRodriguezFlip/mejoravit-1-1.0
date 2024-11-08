@@ -3,8 +3,10 @@ import { Form } from './Form';
 
 export const HomeMain = (props) => {
     return (
-        <Container>
-            <Form />
-        </Container>
+        <div className="homeMain">
+            <Container>
+                <Form />
+            </Container>
+        </div>
     );
 };

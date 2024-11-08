@@ -12,12 +12,16 @@ export const NavBar = () => {
     };
 
     return (
-        <Navbar bg="dark" expand="md">
+        <Navbar expand="md" className="navBar">
             <Container className="d-flex justify-content-between align-items-center">
                 {/* Logo */}
                 <div>
                     <NavLink to="/" className="logoNav">
-                        MejoraVit
+                        <img
+                            src="https://i.ibb.co/3cs3b6Z/LOGO-MEJORAVIT-VARIANTES-1.png"
+                            alt="InfonaVit Logo"
+                            style={{ height: '40px', width: 'auto' }}
+                        />
                     </NavLink>
                 </div>
 

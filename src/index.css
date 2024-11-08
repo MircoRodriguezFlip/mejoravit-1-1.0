@@ -1,4 +1,12 @@
+body {
+    background-color: #a7bbfa;
+}
+
 /* -------------------------------------- NAVBAR */
+
+.navBar {
+    background-color: transparent;
+}
 
 .logoNav {
     color: white;
@@ -20,17 +28,22 @@
     color: white;
 }
 
+.customToggler:focus {
+    color: #e84e74;
+}
+
 .collapse.navbar-collapse {
     z-index: 1000;
     position: absolute;
     top: 100%;
     left: 0;
     width: 100%;
-    background-color: #343a40;
+    background-color: #e84e74;
 }
 
 .navbar-nav .nav-link {
     color: white;
+    padding-left: 10px;
 }
 
 .navbar-nav .nav-link:hover {
@@ -40,8 +53,44 @@
 .navbar-nav .nav-link.active {
     color: white;
 }
+/* -------------------------------------- FORM */
+
+.form {
+    position: relative;
+    border: 3px solid white;
+    border-radius: 10px;
+}
+
+.form-image {
+    position: absolute;
+    top: -60px;
+    left: -15px;
+    width: 100px;
+    height: auto;
+}
+
+.form-image-2 {
+    position: absolute;
+    bottom: -35px; /* Mueve la imagen hacia abajo */
+    right: -10px; /* Mueve la imagen hacia la izquierda */
+    width: 100px; /* Ajusta el tamaño de la imagen según sea necesario */
+    height: auto;
+}
+
+.parrafo1 {
+    text-align: center;
+}
+
+.parrafo2 {
+    font-size: 10px;
+    text-align: center;
+}
 
 /* -------------------------------------- FOOTER */
+
+.footer {
+    background-color: #e84e74;
+}
 
 .redes a {
     color: white;
